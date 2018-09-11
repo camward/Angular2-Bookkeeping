@@ -52,7 +52,6 @@ import { FilterPipe } from './shared/pipes/filter.pipe';
     HistoryDetailComponent,
     HistoryFilterComponent,
     FilterPipe
-
   ],
   providers: [BillService, CategoriesService, EventsService]
 })
