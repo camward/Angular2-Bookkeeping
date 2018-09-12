@@ -7,6 +7,7 @@ import { Bill } from '../shared/models/bill.model';
 import { Category } from '../shared/models/category.model';
 import { WFMEvent } from '../shared/models/event.model';
 import { Subscription } from 'rxjs/Subscription';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'wfm-planning-page',
@@ -24,7 +25,10 @@ export class PlanningPageComponent implements OnInit, OnDestroy {
 
   constructor(private billService: BillService,
               private categoriesService: CategoriesService,
-              private eventsService: EventsService) {
+              private eventsService: EventsService,
+              private title: Title
+  ) {
+    title.setTitle('Страница планирования');
   }
 
   ngOnInit() {

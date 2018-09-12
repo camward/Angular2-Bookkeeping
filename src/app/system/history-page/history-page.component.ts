@@ -7,6 +7,7 @@ import * as moment from 'moment';
 import { EventsService } from '../shared/services/events.service';
 import { Category } from '../shared/models/category.model';
 import { WFMEvent } from '../shared/models/event.model';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'wfm-history-page',
@@ -16,18 +17,18 @@ import { WFMEvent } from '../shared/models/event.model';
 export class HistoryPageComponent implements OnInit, OnDestroy {
 
   constructor(private categoriesService: CategoriesService,
-              private eventService: EventsService) {
+              private eventService: EventsService,
+              private title: Title
+  ) {
+    title.setTitle('Страница истории');
   }
 
   isLoaded = false;
   s1: Subscription;
-
   categories: Category[] = [];
   events: WFMEvent[] = [];
   filteredEvents: WFMEvent[] = [];
-
   chartData = [];
-
   isFilterVisible = false;
 
   ngOnInit() {

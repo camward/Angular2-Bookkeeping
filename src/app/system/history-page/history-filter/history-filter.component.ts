@@ -10,7 +10,6 @@ export class HistoryFilterComponent {
 
   @Output() onFilterCancel = new EventEmitter<any>();
   @Output() onFilterApply = new EventEmitter<any>();
-
   @Input() categories: Category[] = [];
 
   selectedPeriod = 'd';

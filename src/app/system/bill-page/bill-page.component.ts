@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { BillService } from '../shared/services/bill.service';
 import { Bill } from '../shared/models/bill.model';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'wfm-bill-page',
@@ -13,13 +14,15 @@ import { Bill } from '../shared/models/bill.model';
 export class BillPageComponent implements OnInit, OnDestroy {
   sub1: Subscription;
   sub2: Subscription;
-
   currency: any;
   bill: Bill;
-
   isLoaded = false;
 
-  constructor(private billService: BillService) { }
+  constructor(private billService: BillService,
+              private title: Title
+  ) {
+    title.setTitle('Страница счета');
+  }
 
   ngOnInit() {
     this.sub1 = Observable.combineLatest(

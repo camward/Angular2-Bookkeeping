@@ -20,7 +20,6 @@
           </h5>
         </div>
         <div class="card-block">
-
           <div class="row" *ngFor="let c of categories">
             <div class="col-xs-6">
               <div class="n-progress">
@@ -31,10 +30,8 @@
             </div>
             <div class="col-xs-6">
               <p>
-                <span class="text-{{getCatColorClass(c)}}">{{ getCategoryCost(c) | number:'1.2' }}</span>
-                из
-                <span class="text-primary">{{ c.capacity | number:'1.2' }}</span>
-                |
+                <span class="text-{{getCatColorClass(c)}}">{{ getCategoryCost(c) | number:'1.2' }}</span> из
+                <span class="text-primary">{{ c.capacity | number:'1.2' }}</span> |
                 осталось <span class="text-{{getCatColorClass(c)}}">{{ c.capacity - getCategoryCost(c) | number:'1.2' }}</span> (EUR)
               </p>
             </div>

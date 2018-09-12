@@ -10,19 +10,14 @@
 
 <section class="section" *ngIf="isLoaded">
   <div class="row">
-    <div class="col-md-6">
-      <wfm-add-event [categories]="categories"></wfm-add-event>
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <wfm-add-category (onCategoryAdd)="newCategoryAdded($event)"></wfm-add-category>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <wfm-edit-category
-        [categories]="categories"
-        (onCategoryEdit)="categoryWasEdited($event)"
-      ></wfm-edit-category>
+    <div class="col-md-4">
+      <wfm-edit-category [categories]="categories" (onCategoryEdit)="categoryWasEdited($event)"></wfm-edit-category>
+    </div>
+    <div class="col-md-4">
+      <wfm-add-event [categories]="categories"></wfm-add-event>
     </div>
   </div>
 </section>

@@ -15,7 +15,6 @@ export class HistoryDetailComponent implements OnInit, OnDestroy {
 
   event: WFMEvent;
   category: Category;
-
   isLoaded = false;
   s1: Subscription;
 
